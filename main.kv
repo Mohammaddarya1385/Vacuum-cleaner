@@ -1,0 +1,81 @@
+<MyLayout>:
+	BoxLayout:
+		orientation: "vertical"
+		size: root.width, root.height
+
+		padding: 50
+		spacing: 20
+
+		Label:
+			id: my_label
+			text: "Let's start"
+			font_size: 32
+
+		RoundedButton:
+			id: button_start
+			markup:True
+			text: "[b]START ENGINE[/b]"
+			pos_hint: {"center_x" : 0.5}
+			font_size: 32
+			size_hint: 0.35, 0.2
+			on_press: root.start_pressed_on()
+			on_release: root.start_pressed_off()
+		RoundedButton:
+			id: button_up
+			markup:True
+			text: "[b]UP[/b]"
+			pos_hint: {"center_x" : 0.5}
+			font_size: 32
+			size_hint: 0.25, 0.15
+			on_press: root.up_pressed_on()
+			on_release: root.up_pressed_off()
+		RoundedButton:
+			id: button_down
+			markup:True
+			text: "[b]DOWN[/b]"
+			pos_hint: {"center_x" : 0.5}
+			font_size: 32
+			size_hint: 0.25, 0.15
+			on_press: root.down_pressed_on()
+			on_release: root.down_pressed_off()
+		RoundedButton:
+			id: button_right
+			markup:True
+			text: "[b]RIGHT[/b]"
+			pos_hint: {"center_x" : 0.5}
+			font_size: 32
+			size_hint: 0.25, 0.15
+			on_press: root.right_pressed_on()
+			on_release: root.right_pressed_off()
+		RoundedButton:
+			id: button_left
+			markup:True
+			text: "[b]LEFT[/b]"
+			pos_hint: {"center_x" : 0.5}
+			font_size: 32
+			size_hint: 0.25, 0.15
+			on_press: root.left_pressed_on()
+			on_release: root.left_pressed_off()
+		RoundedButton:
+			id: button_stop
+			markup:True
+			text: "[b]STOP[/b]"
+			font_size: 32
+			size_hint: 0.25, 0.15
+			pos_hint: {"center_x" : 0.5}
+			on_press: root.stop_pressed_on()
+			on_release: root.stop_pressed_off()
+<RoundedButton@Button>
+	background_color:(0,0,0,0)
+	background_normal:""
+	bg_color:(0,1,0,1)
+
+	canvas.before:
+		Color:
+			rgba:self.bg_color
+		RoundedRectangle:
+			size:self.size
+			pos:self.pos
+			radius:[10]
+
+
